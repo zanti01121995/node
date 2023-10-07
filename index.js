@@ -1,12 +1,13 @@
 const express = require('express')
 const app = express()
 const fs = require("fs");
-const text = "Here i created some contents in side the folder files for sample files"
+const timestamp = Date.now();
+const text = `this is the content which includes the timestamp data ==>> ${timestamp} as the file name`
 
 
-fs.writeFile(`./contents/sample_${Date.now()}.txt`, text, (err) => {
+fs.writeFile(`./contents/sample_${timestamp}.txt`, text, (err) => {
     if (err) throw err;
-    console.log(`Completed writing sample_${Date.now()}.txt`);
+    console.log(`Completed writing sample_${timestamp}.txt`);
 });
 
 fs.readdir('./contents', "utf-8", (err, data) => {
