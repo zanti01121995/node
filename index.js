@@ -3,14 +3,15 @@ const app = express()
 const fs = require("fs");
 const text = "Here i created some contents in side the folder files for sample files"
 
-fs.writeFile('./contents/sample.txt', text, (err) => {
+
+fs.writeFile(`./contents/sample_${Date.now()}.txt`, text, (err) => {
     if (err) throw err;
-    console.log("Completed writing sample.txt");
+    console.log(`Completed writing sample_${Date.now()}.txt`);
 });
 
-fs.readFile('./contents/sample.txt', "utf-8", (err, data) => {
+fs.readdir('./contents', "utf-8", (err, data) => {
     if (err) throw err;
-    console.log(data);
+    console.log("readsed", data);
 })
 
 app.get('/', function (req, res) {
