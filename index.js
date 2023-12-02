@@ -4,7 +4,7 @@ const fs = require("fs");
 const timestamp = new Date().toDateString();
 const text = `this is the content which includes the timestamp data ==>> ${timestamp} as the file name`
 
-console.log("timestamp", timestamp);
+console.log("timestamp data", timestamp);
 
 
 //////api to write the file inside the folder////////////
